@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace=绑定一个对应的Dao/Mapper接口-->
+<mapper namespace="dao.UserMapper">
+
+    <!--接口中的一个方法对应SQL语句-->
+    <!--select查询语句-->
+    <select id="getUserList" resultType="User">
+        select * from mybatis.user
+    </select>
+
+    <select id="getUserByLimit" parameterType="map" resultType="User">
+        select * from mybatis.user limit #{startIndex}, #{pageSize}
+    </select>
+
+</mapper>
